@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/all.css">
+        <title>Register</title>
+    </head>
+    <body>
+        <header class="bg-blue-950 ">
+            <div class="logo text-white">
+                <h1><a href="index.html">WelcomeStore</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>home</li>
+                    <li>men</li>
+                    <li>women</li>
+                </ul>
+            </nav>
+            <div class="users">
+                <ul id="links">
+                    <li><a href="login.html">login</a></li>
+                    <li><a href="register.html">register</a></li>
+                </ul>
+            </div>
+        </header>
+        <main class="bg-gray-200">
+            <section class="sec-ind bg-blue-950 text-white">
+                <h1 style="text-align: center;">register page</h1>
+                <form class="border border-4 border-cyan-600 an-border text-white">
+                    <input type="text" placeholder="Enter your name" id="username" class="p-1">
+                    <input type="email" placeholder="Enter your email" id="email" class="p-1">
+                    <input type="password" placeholder="Enter your password" id="password" class="p-1">
+                    <input type="submit" value="sign in" id="sign_in" class="hover:scale-[0.95]">
+                </form>
+                <p class="p-4" >Have an acouunt? <a href="login.html"  style="text-decoration: underline;">login</a></p>
+            </section>
+        </main>
+        <script src="js/register.js"></script>
+    </body>
+</html> 
