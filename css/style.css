@@ -3,18 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* ================== header ===================== */
 header{
+    position: absolute;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    z-index: 50;
     height: 66px;
     width: 100%;
     padding: 0 20px;
-}
-main{
-    height: 100vh;
 }
 ul{
     list-style: none;
@@ -23,37 +21,43 @@ ul{
 a{
     text-decoration: none;
 }
-li{
-    transition: 0.3s ease-in-out;
-    color: aliceblue;
-}
-li:hover{
-    transform:scale(1.2);
-}
-.users li{
+li,.logo a{
     display: inline-block;
     margin: 0 10px;
     font-size: 20px;
+    transition: 0.3s ease-in-out;
+    color: aliceblue;
 }
-nav li{
-    display: inline-block;
+li:hover, .logo a:hover{
+    transform:scale(1.2);
+    color: aquamarine;
+}
+nav li {
     margin: 0 20px;
-    font-size: 20px;
 }
-.sec-log,.sec-reg,.sec-ind{
+#user-info{
+    display: flex;
+    align-items: center;
+}
+/* =================== main =======================*/
+.sec-log,.sec-reg{
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     width: 25%;
+    height: fit-content;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 0 5px oklch(68.5% 0.169 237.323),0 0 10px oklch(50.901% 0.11513 239.24);
+    animation: bouns 2.5s infinite ease-in-out;
 }
 h1{
     color: aliceblue;
@@ -89,4 +93,68 @@ form{
         border-color: #0e7490;
         box-shadow: 0 0 20px #22d3ee, 0 0 40px #22d3ee;
     }
+}
+@keyframes bouns{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+}
+/* ============================== Home-page =============================================== */
+.Home{
+    margin-top: 7vh;
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+.contianer{
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    background-color: yellowgreen;
+    padding: 5px;
+}
+.products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.product{
+    border: 2px solid rebeccapurple;
+    background-color:red;
+    height: 150px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+}
+.product img{
+    width: 35%;
+    height: 100%;
+    object-fit:contain;
+    flex-shrink: 0;
+}
+.product-des{
+    flex: 1;
+    padding: 0 10px;
+    overflow: hidden;
+}
+.product-act{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: 4px;
+    flex-shrink: 0;
+    padding: 2px 10px;
+}
+.fav{
+    display: inline-block;
+    cursor: pointer;
 }
