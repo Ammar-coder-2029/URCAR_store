@@ -14,7 +14,7 @@ regBtn.addEventListener("click",function(e){
             localStorage.setItem("password", password.value)
             setTimeout(()=>{
                 window.location = "login.html"
-            },1500)
+            },500)
         }
 
     }

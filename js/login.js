@@ -13,7 +13,7 @@ logBtn.addEventListener("click",function(e){
             if ( getusername === username.value && getusername.trim() === username.value && getpassword === password.value ) {
                 setTimeout(()=>{
                     window.location = "index.html"
-                },1500)
+                },500)
             }else{
                 alert("not match")
             }

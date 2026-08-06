@@ -19,20 +19,22 @@
                     <li>women</li>
                 </ul>
             </nav>
-            <div class="users" >
+            <div class="users flex" >
                 <ul id="links">
                     <li class="li-login"><a href="login.html">login</a></li>
                     <li class="li-register"><a href="register.html">register</a></li>
                 </ul>
                 <ul id="user-info">
                     <li><a href="#" id="user"></a></li>
-                    <li>
-                        <span id="count-prod">1</span>
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <div class="carts-prod">
-                            <div></div>
-                            <a href="cart.html" id="cart">View all products</a>
-                        </div>
+                    <li class="li-cart">
+                        <span class="main-span relative">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="count-prod" class="size-5 text-center">0</span>
+                            <div class="carts-prod absolute">
+                                <div class="cart-prods"></div>
+                                <a href="cart.html" id="cart">View all products</a>
+                            </div>
+                        </span>
                     </li>
                     <li><a href="" id="logout">LOG OUT</a></li>
                 </ul>
@@ -41,7 +43,6 @@
         <main class="Home">
             <div class="contianer">
                 <div class="products">
-
                     <div class="product">
                         <img src="imges/social-media-dark.png">
                         <div class="product-des">
@@ -51,54 +52,6 @@
                         <div class="product-act">
                             <button class="add-cart bg-blue-200">add</button>
                             <i class="fa-regular fa-heart fav"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="product">
-                        <img src="imges/social-media-dark.png">
-                        <div class="product-des">
-                            <h2>Ammar</h2>
-                            <p>software engineer</p>
-                        </div>
-                        <div class="product-act">
-                            <button class="add-cart bg-blue-200">add</button>
-                            <i class="fa-regular fa-heart fav"></i> 
-                        </div>
-                    </div>
-                    
-                    <div class="product">
-                        <img src="imges/social-media-dark.png">
-                        <div class="product-des">
-                            <h2>Ammar</h2>
-                            <p>software engineer</p>
-                        </div>
-                        <div class="product-act">
-                            <button class="add-cart bg-blue-200">add</button>
-                            <i class="fa-regular fa-heart fav"></i> 
-                        </div>
-                    </div>
-                    
-                    <div class="product">
-                        <img src="imges/social-media-dark.png">
-                        <div class="product-des">
-                            <h2>Ammar</h2>
-                            <p>software engineer</p>
-                        </div>
-                        <div class="product-act">
-                            <button class="add-cart bg-blue-200">add</button>
-                            <i class="fa-regular fa-heart fav"></i> 
-                        </div>
-                    </div>
-                    
-                    <div class="product">
-                        <img src="imges/social-media-dark.png">
-                        <div class="product-des">
-                            <h2>Ammar</h2>
-                            <p>software engineer</p>
-                        </div>
-                        <div class="product-act">
-                            <button class="add-cart bg-blue-200">add</button>
-                            <i class="fa-regular fa-heart fav"></i> 
                         </div>
                     </div>
                 </div>

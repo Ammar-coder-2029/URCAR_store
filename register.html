@@ -27,12 +27,21 @@
             </div>
         </header>
         <main class="bg-gray-200">
-            <section class="sec-reg bg-blue-950 text-white">
+            <section class="sec-reg text-blue-950">
                 <h1 style="text-align: center;">register page</h1>
-                <form class="border border-4 border-cyan-600 an-border text-white">
-                    <input type="text" placeholder="Enter your name" id="username" class="p-1">
-                    <input type="email" placeholder="Enter your email" id="email" class="p-1">
-                    <input type="password" placeholder="Enter your password" id="password" class="p-1">
+                <form class="border border-4 border-cyan-600 an-border text-blue-950 gap-6">
+                    <div class="col-3">
+                        <input class="effect-3" type="text" placeholder="Enter your name" id="username" class="p-1">
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="col-3">
+                        <input class="effect-3" type="email" placeholder="Enter your email" id="email" class="p-1">
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="col-3">
+                        <input class="effect-3" type="password" placeholder="Enter your password" id="password" class="p-1">
+                        <span class="focus-border"></span>
+                    </div>
                     <input type="submit" value="sign in" id="sign_in" class="hover:scale-[0.95]">
                 </form>
                 <p class="p-4" >Have an acouunt? <a href="login.html"  style="text-decoration: underline;">login</a></p>
