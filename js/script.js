@@ -47,58 +47,58 @@ let products = [
     },
     {
         id: 5,
-        title: "Backpack",
-        imgurl: "imges/Leather-Backpack2.jpg",
-        color: "gray",
+        title: "Mercides",
+        imgurl: "imges/blackMERCIDES.jpg",
+        color: "Black",
         qty: 1
     },
     {
         id: 6,
-        title: "Runnig shoes",
-        imgurl: "imges/Running-Shoes.jpg",
-        color: "black and white",
+        title: "Ferrai",
+        imgurl: "imges/redFERARI.jpg",
+        color: "Red",
         qty: 1
     },
     {
         id: 7,
-        title: "smart watch",
-        imgurl: "imges/Smart-Watches.jpg",
-        color: "dark gray",
+        title: "BMW",
+        imgurl: "imges/redMBW.jpg",
+        color: "pergandi",
         qty: 1
     },
     {
         id: 8,
-        title: "sunglasses",
-        imgurl: "imges/Vintage-Sunglasses.jpg",
-        color: "black",
+        title: "Tesla",
+        imgurl: "imges/redTESALA.jpg",
+        color: "red",
         qty: 1
     },
     {
         id: 9,
-        title: "Backpack",
-        imgurl: "imges/Leather-Backpack2.jpg",
-        color: "gray",
+        title: "AUDI",
+        imgurl: "imges/whiteAUDI.jpg",
+        color: "white",
         qty: 1
     },
     {
         id: 10,
-        title: "Runnig shoes",
-        imgurl: "imges/Running-Shoes.jpg",
-        color: "black and white",
+        title: "TOYOTA",
+        imgurl: "imges/whitehighTOYOTA.jpg",
+        color: "white",
         qty: 1
     },
     {
         id: 11,
-        title: "smart watch",
-        imgurl: "imges/Smart-Watches.jpg",
-        color: "dark gray",
+        title: "Nissan",
+        imgurl: "imges/whiteNISSAN.jpg",
+        color: "white",
         qty: 1
     },
     {
         id: 12,
-        title: "sunglasses",
-        imgurl: "imges/Vintage-Sunglasses.jpg",
-        color: "black",
+        title: "Nissan 180SX",
+        imgurl: "imges/Nissan-180SX.jpg",
+        color: "white",
         qty: 1
     }
 ];
@@ -110,8 +110,8 @@ function drawItems(){
                 <img class="img-blured" src="${item.imgurl}">
             </div>
             <div class="product-des">
-                <h2>${item.title}</h2>
-                <p>${item.color}</p>
+                <h2 class="item-title" >${item.title}</h2>
+                <p  class="item-disc">${item.color}</p>
             </div>
             <div class="product-act">
                 <button class="add-cart bg-blue-200" onclick="check(${item.id})">add</button>

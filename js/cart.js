@@ -24,8 +24,8 @@ function drawItems() {
                 <img class="img-blured" src="${item.imgurl}">
             </div>
             <div class="product-des">
-                <h2>${item.title}</h2>
-                <p>${item.color}</p>
+                <h2 class="item-title" >${item.title}</h2>
+                <p  class="item-disc">${item.color}</p>
             </div>
             <div class="product-act">
                 <button class="remove-cart bg-blue-200" onclick="removeFromCart(${item.id})">remove</button>
