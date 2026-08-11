@@ -18,35 +18,97 @@ function logoutbtn(){
 let allproducts = document.querySelector(".products")
 let products = [
     {
-        id:1,
-        title:"Backpack",
-        imgurl:"imges/Leather-Backpack2.jpg",
-        color:"gray"
+        id: 1,
+        title: "JETOUR",
+        imgurl: "imges/grayJETOUR.jpg",
+        color: "gray",
+        qty: 1
     },
     {
-        id:2,
-        title:"Runnig shoes",
-        imgurl:"imges/Running-Shoes.jpg",
-        color:"black and white"
+        id: 2,
+        title: "Ferrai",
+        imgurl: "imges/blackFERARI.jpg",
+        color: "black",
+        qty: 1
     },
     {
-        id:3,
-        title:"smart watch",
-        imgurl:"imges/Smart-Watches.jpg",
-        color:"dark gray"
+        id: 3,
+        title: "Lampo",
+        imgurl: "imges/blueLAMPORGINE.jpg",
+        color: "blue",
+        qty: 1
     },
     {
-        id:4,
-        title:"sunglasses",
-        imgurl:"imges/Vintage-Sunglasses.jpg",
-        color:"black"
+        id: 4,
+        title: "Porsche",
+        imgurl: "imges/greenPorsche.jpg",
+        color: "green",
+        qty: 1
     },
-]
-
+    {
+        id: 5,
+        title: "Backpack",
+        imgurl: "imges/Leather-Backpack2.jpg",
+        color: "gray",
+        qty: 1
+    },
+    {
+        id: 6,
+        title: "Runnig shoes",
+        imgurl: "imges/Running-Shoes.jpg",
+        color: "black and white",
+        qty: 1
+    },
+    {
+        id: 7,
+        title: "smart watch",
+        imgurl: "imges/Smart-Watches.jpg",
+        color: "dark gray",
+        qty: 1
+    },
+    {
+        id: 8,
+        title: "sunglasses",
+        imgurl: "imges/Vintage-Sunglasses.jpg",
+        color: "black",
+        qty: 1
+    },
+    {
+        id: 9,
+        title: "Backpack",
+        imgurl: "imges/Leather-Backpack2.jpg",
+        color: "gray",
+        qty: 1
+    },
+    {
+        id: 10,
+        title: "Runnig shoes",
+        imgurl: "imges/Running-Shoes.jpg",
+        color: "black and white",
+        qty: 1
+    },
+    {
+        id: 11,
+        title: "smart watch",
+        imgurl: "imges/Smart-Watches.jpg",
+        color: "dark gray",
+        qty: 1
+    },
+    {
+        id: 12,
+        title: "sunglasses",
+        imgurl: "imges/Vintage-Sunglasses.jpg",
+        color: "black",
+        qty: 1
+    }
+];
 function drawItems(){
     let x = products.map((item)=>{
-    return `<div class="product">
-            <img src="${item.imgurl}">
+    return `<div class="product relative">
+            <div class="product-img-container">
+                <img class="img-normal" src="${item.imgurl}">
+                <img class="img-blured" src="${item.imgurl}">
+            </div>
             <div class="product-des">
                 <h2>${item.title}</h2>
                 <p>${item.color}</p>
@@ -68,15 +130,14 @@ function check(id){
         let checkProduct = products.find((item) => item.id === id)
         addprod= [...addprod,checkProduct] 
         localStorage.setItem("productsInCart",JSON.stringify(addprod))
-            countProd.innerHTML = addprod.length
-            cartsProductDiv.innerHTML += `<p>${checkProduct.title}</p>`
-            
-        }else{
-            setTimeout(()=>{
-                window.location = "register.html"
-            },500)
-        }
+        countProd.innerHTML = addprod.length
+        cartsProductDiv.innerHTML += `<p>${checkProduct.title}</p>`
+    }else{
+        setTimeout(()=>{
+            window.location = "register.html"
+        },500)
     }
+}
 if (addprod) {
     addprod.map(item =>
         cartsProductDiv.innerHTML += `<p>${item.title}</p>`
