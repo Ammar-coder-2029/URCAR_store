@@ -41,7 +41,7 @@ nav li {
     align-items: center;
     justify-content: center;
 }
-#count-prod,.itemsNum{
+#count-prod{
     position: absolute;
     top: -8px;
     right: -8px;
@@ -175,6 +175,7 @@ form{
     width: 100%;
     height: 100vh;
     margin-top: 66px;
+    background-color: rgba(224, 224, 224, 0.363);
 }
 .contianer{
     height: 90%;
@@ -189,7 +190,7 @@ form{
     height: 100%;
     width: 100%;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 10px;
 }
 .product{
     border: 2px solid oklch(42.4% 0.199 265.638);
@@ -198,7 +199,7 @@ form{
     display: flex;
     align-items: center;
     border-radius: 10px;
-    animation: borPuls 4s infinite ease-in-out;
+    animation: borPuls 1.7s infinite ease-in-out;
 }
 .product-img-container {
     position: relative;
@@ -245,19 +246,35 @@ form{
 }
 .item-title{
     font-family: "Oi", serif;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 300;
+    font-style:normal;
+    letter-spacing: 2px;
+    font-size: 20px;
 }
+.item-disc{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 20px;
+    font-style: italic;
+}
+
 .product-act{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    width: 18%;
     gap: 4px;
     flex-shrink: 0;
     padding: 10px 7px;
     position: relative;
+}
+.qty-input{
+    width: 90%;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 2px solid #0e7490;
 }
 .add-cart,.remove-cart{
     padding: 5px 15px;
@@ -265,17 +282,19 @@ form{
     font-family:fantasy;
 }
 .remove-cart{
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%,-40%);
+    margin: 20px 10px 0 0;
+}
+.itemcount{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #3399FF;
 }
 .add-cart:hover,
 .remove-cart:hover{
     transform: scale(0.9);
     background-color: oklch(62.3% 0.214 259.815);
-}
-.remove-cart:hover{
-    transform: translate(-50%,-40%);
 }
 .fav{
     display: inline-block;

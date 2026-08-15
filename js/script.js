@@ -10,7 +10,10 @@ if (localStorage.getItem("username")) {
 let logout = document.querySelector("#logout")
 logout.addEventListener("click", logoutbtn)
 function logoutbtn(){
-    localStorage.clear()
+    localStorage.removeItem("email")
+    localStorage.removeItem("username")
+    localStorage.removeItem("password")
+    localStorage.removeItem("productsInCart")
     setTimeout(()=>{
         window.location = "login.html"
     },500)
@@ -114,8 +117,9 @@ function drawItems(){
                 <p  class="item-disc">${item.color}</p>
             </div>
             <div class="product-act">
-                <button class="add-cart bg-blue-200" onclick="check(${item.id})">add</button>
+                <button class="add-cart bg-blue-200" onclick="check(${item.id}, this)">add</button>
                 <i class="fa-regular fa-heart fav"></i>
+                <input type="number" name="number" class="qty-input" min="1" value="1">
             </div>
         </div>`})
     allproducts.innerHTML = x.join("");
@@ -125,25 +129,35 @@ drawItems()
 let addprod = localStorage.getItem("productsInCart") ? JSON.parse(localStorage.getItem("productsInCart")) : [];
 let countProd = document.querySelector("#count-prod")
 let cartsProductDiv = document.querySelector(".cart-prods")
-function check(id){
+
+// دالة واحدة بتعيد رسم الـ badge والقايمة كل مرة، بدل الـ += القديمة اللي كانت بتراكم strings غلط
+function renderCartList(){
+    countProd.innerHTML = addprod.reduce((sum, item) => sum + item.qty, 0)
+    cartsProductDiv.innerHTML = addprod.map(item => `<p>${item.title} x${item.qty}</p>`).join("")
+}
+
+function check(id, btn){
     if (localStorage.getItem("username")) {
         let checkProduct = products.find((item) => item.id === id)
-        addprod= [...addprod,checkProduct] 
-        localStorage.setItem("productsInCart",JSON.stringify(addprod))
-        countProd.innerHTML = addprod.length
-        cartsProductDiv.innerHTML += `<p>${checkProduct.title}</p>`
+        let qtyInput = btn.closest(".product").querySelector(".qty-input")
+        let qty = parseInt(qtyInput.value) || 1
+
+        let existing = addprod.find(item => item.id === id)
+        if (existing) {
+            existing.qty += qty          // موجود قبل كده -> زوّد العدد بس
+        } else {
+            addprod = [...addprod, {...checkProduct, qty: qty}]   // مش موجود -> ضيفه جديد
+        }
+        localStorage.setItem("productsInCart", JSON.stringify(addprod))
+        renderCartList()
     }else{
         setTimeout(()=>{
             window.location = "register.html"
         },500)
     }
 }
-if (addprod) {
-    addprod.map(item =>
-        cartsProductDiv.innerHTML += `<p>${item.title}</p>`
-    )
-    countProd.innerHTML = addprod.length
-}
+
+renderCartList()   // نداء أول مرة عند تحميل الصفحة بدل الكود القديم المكرر
 let CarIcon = document.querySelector(".li-cart");
 let CartProducts = document.querySelector(".carts-prod");
 CarIcon.addEventListener("click", showen_list);
@@ -153,8 +167,4 @@ function showen_list() {
     } else {
         CartProducts.style.display = "block";
     }
-}
-
-function count() {
-    
 }

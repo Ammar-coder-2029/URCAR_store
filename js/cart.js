@@ -29,21 +29,25 @@ function drawItems() {
             </div>
             <div class="product-act">
                 <button class="remove-cart bg-blue-200" onclick="removeFromCart(${item.id})">remove</button>
-                <span class="itemsNum font-bold text-lg">${item.qty}</span> 
+                <span class="itemcount font-bold text-lg">${item.qty}</span> 
             </div>
         </div>`;
     });
     allproducts.innerHTML = x.join("");
 }
 
-function removeFromCart(id) {
-    cartproduct = cartproduct.filter((item) => item.id !== id);
-    localStorage.setItem("productsInCart", JSON.stringify(cartproduct));
-    if (cartproduct.length > 0) {
-        drawItems();
+function removeFromCart(id,qty) {
+    if (qty>0) {
+        qty-=1;
     } else {
-        allproducts.innerHTML = "";
-        showEmpty();
+        cartproduct = cartproduct.filter((item) => item.id !== id);
+        localStorage.setItem("productsInCart", JSON.stringify(cartproduct));
+        if (cartproduct.length > 0) {
+            drawItems();
+        } else {
+            allproducts.innerHTML = "";
+            showEmpty();
+        }
     }
 }
 
