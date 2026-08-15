@@ -108,7 +108,7 @@ let products = [
 function drawItems(){
     let x = products.map((item)=>{
     return `<div class="product relative flex flex-col md:flex-row h-fit md:h-[150px]">
-            <div class="product-img-container">
+            <div class="product-img-container w-full md:w-1/3">
                 <img class="img-normal" src="${item.imgurl}">
                 <img class="img-blured" src="${item.imgurl}">
             </div>
@@ -116,7 +116,7 @@ function drawItems(){
                 <h2 class="item-title" >${item.title}</h2>
                 <p  class="item-disc">${item.color}</p>
             </div>
-            <div class="product-act">
+            <div class="product-act w-1/4">
                 <button class="add-cart bg-blue-200" onclick="check(${item.id}, this)">add</button>
                 <i class="fa-regular fa-heart fav"></i>
                 <input type="number" name="number" class="qty-input" min="1" value="1">
