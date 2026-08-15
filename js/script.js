@@ -130,7 +130,6 @@ let addprod = localStorage.getItem("productsInCart") ? JSON.parse(localStorage.g
 let countProd = document.querySelector("#count-prod")
 let cartsProductDiv = document.querySelector(".cart-prods")
 
-// دالة واحدة بتعيد رسم الـ badge والقايمة كل مرة، بدل الـ += القديمة اللي كانت بتراكم strings غلط
 function renderCartList(){
     countProd.innerHTML = addprod.reduce((sum, item) => sum + item.qty, 0)
     cartsProductDiv.innerHTML = addprod.map(item => `<p>${item.title} x${item.qty}</p>`).join("")
@@ -144,9 +143,9 @@ function check(id, btn){
 
         let existing = addprod.find(item => item.id === id)
         if (existing) {
-            existing.qty += qty          // موجود قبل كده -> زوّد العدد بس
+            existing.qty += qty
         } else {
-            addprod = [...addprod, {...checkProduct, qty: qty}]   // مش موجود -> ضيفه جديد
+            addprod = [...addprod, {...checkProduct, qty: qty}]
         }
         localStorage.setItem("productsInCart", JSON.stringify(addprod))
         renderCartList()
@@ -157,7 +156,7 @@ function check(id, btn){
     }
 }
 
-renderCartList()   // نداء أول مرة عند تحميل الصفحة بدل الكود القديم المكرر
+renderCartList()
 let CarIcon = document.querySelector(".li-cart");
 let CartProducts = document.querySelector(".carts-prod");
 CarIcon.addEventListener("click", showen_list);
