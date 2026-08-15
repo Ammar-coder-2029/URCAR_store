@@ -18,8 +18,8 @@ if (cartproduct.length > 0) {
 function drawItems() {
     let x = cartproduct.map((item) => {
         return `
-        <div class="product relative">
-            <div class="product-img-container">
+        <div class="product relative flex flex-col md:flex-row h-fit md:h-[150px]">
+            <div class="product-img-container w-full md:w-1/3">
                 <img class="img-normal" src="${item.imgurl}">
                 <img class="img-blured" src="${item.imgurl}">
             </div>

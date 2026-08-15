@@ -107,7 +107,7 @@ let products = [
 ];
 function drawItems(){
     let x = products.map((item)=>{
-    return `<div class="product relative">
+    return `<div class="product relative flex flex-col md:flex-row h-fit md:h-[150px]">
             <div class="product-img-container">
                 <img class="img-normal" src="${item.imgurl}">
                 <img class="img-blured" src="${item.imgurl}">
