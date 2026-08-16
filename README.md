@@ -71,4 +71,4 @@ Solo learning project — not currently open to external contributions, but feed
 
 ## 📄 License
 
-MIT
+SEF
