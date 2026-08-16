@@ -3,6 +3,7 @@
 A sleek multi-page car store built from scratch with **vanilla HTML, CSS, and JavaScript** — no frameworks, no shortcuts. Browse a curated fleet, filter by vibe (sport vs. everyday), drop cars into your cart, and check out the experience end to end. Everything runs entirely in your browser, powered by `localStorage`.
 
 **🔗 Live demo:** https://ammar-coder-2029.github.io/URCAR_store/
+
 **📦 Repository:** https://github.com/Ammar-coder-2029/URCAR_store
 
 ## ✨ Overview
@@ -31,19 +32,6 @@ URCAR is a hands-on deep dive into core JavaScript — DOM manipulation, event-d
 - **Persistent sessions** — log out and log back in with the same account, no re-registering required.
 - **Client-side auth** — register and log in with credentials checked against stored data.
 - **Animated, responsive UI** — glowing borders, hover scaling, and a blurred-background hover effect on product images, all built with Tailwind + custom CSS keyframes.
-
-## ⚡ Setup
-
-Zero install, zero build step — Tailwind loads straight from a CDN.
-
-```bash
-git clone https://github.com/Ammar-coder-2029/URCAR_store.git
-cd URCAR_store
-# open index.html directly in a browser, or serve it locally:
-python -m http.server
-```
-
-Or just try the [live demo](https://ammar-coder-2029.github.io/URCAR_store/) directly — no setup needed.
 
 ## 🎮 Usage
 
