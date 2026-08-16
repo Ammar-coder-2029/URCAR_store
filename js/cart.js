@@ -5,10 +5,10 @@ let user = document.querySelector("#user");
 let links = document.querySelector("#links");
 let badgeCount = document.querySelector("#count-prod"); 
 
-if (localStorage.getItem("username")) {
-    if(links) links.remove();
-    if(userinfo) userinfo.style.display = "flex";
-    if(user) user.innerHTML = localStorage.getItem("username");
+if (localStorage.getItem("isloggin")) {
+    links.remove()
+    userinfo.style.display = "flex"
+    user.innerHTML = localStorage.getItem("username")
 }
 if (cartproduct.length > 0) {
     drawItems();
@@ -28,7 +28,7 @@ function drawItems() {
                 <p  class="item-disc">${item.color}</p>
             </div>
             <div class="product-act">
-                <button class="remove-cart bg-blue-200" onclick="removeFromCart(${item.id})">remove</button>
+                <button class="remove-cart bg-blue-200" onclick="removeFromCart(${item.id},${item.qty})">remove</button>
                 <span class="itemcount font-bold text-lg">${item.qty}</span> 
             </div>
         </div>`;
@@ -37,18 +37,19 @@ function drawItems() {
 }
 
 function removeFromCart(id,qty) {
-    if (qty>0) {
-        qty-=1;
+    if (qty > 0) {
+        let cartproductqty = cartproduct.find((item) => item.id === id);
+        cartproductqty.qty -= 1;
     } else {
         cartproduct = cartproduct.filter((item) => item.id !== id);
+    }
         localStorage.setItem("productsInCart", JSON.stringify(cartproduct));
         if (cartproduct.length > 0) {
             drawItems();
         } else {
-            allproducts.innerHTML = "";
+            allproducts.innerHTML=""
             showEmpty();
         }
-    }
 }
 
 function showEmpty() {
